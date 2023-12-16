@@ -15,9 +15,6 @@ public interface VaccinationCenterRepository extends JpaRepository<VaccinationCe
     @Query(value = "select * from vaccination_center where doctor_count = (select min(doctor_count) from vaccination_center)", nativeQuery = true)
     public List<VaccinationCenter> getMinimumDoctorVaccinationCenter();
 
-
-
-
     @Modifying
     @Transactional
     @Query(value = "update vaccination_center set doctor_count=:docCount where id=:id", nativeQuery = true)

@@ -29,4 +29,5 @@ public class VaccinationCenterService {
         int docCount =  vaccinationCenter.getDoctorCount() + 1;
         vaccinationCenterRepository.updateDocCountByOne(id, docCount);
     }
+
 }
