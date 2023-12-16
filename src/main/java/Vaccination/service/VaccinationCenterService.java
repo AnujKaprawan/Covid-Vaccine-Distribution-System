@@ -10,7 +10,7 @@ public class VaccinationCenterService {
     @Autowired
     VaccinationCenterRepository vaccinationCenterRepository;
     
-      public void registerVaccinationCenter(VaccinationCenter vaccinationCenter){
+      public VaccinationCenter registerVaccinationCenter(VaccinationCenter vaccinationCenter){
           vaccinationCenterRepository.save(vaccinationCenter); // It is going to save Vaccination center object in the database
           return vaccinationCenter;
       }
