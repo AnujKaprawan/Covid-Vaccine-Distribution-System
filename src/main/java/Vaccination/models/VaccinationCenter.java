@@ -1,4 +1,4 @@
-package Vaccination.Models;
+package Vaccination.models;
 
 import jakarta.persistence.*;
 

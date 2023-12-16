@@ -1,4 +1,4 @@
-package Vaccination.Models;
+package Vaccination.models;
 
 import jakarta.persistence.*;
 import lombok.*;
@@ -23,4 +23,5 @@ public class Doctor {
     int patientCount;
     @OneToMany
     List<Patient> patients;
+
 }
