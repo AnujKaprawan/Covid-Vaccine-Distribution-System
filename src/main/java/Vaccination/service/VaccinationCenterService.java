@@ -5,6 +5,8 @@ import Vaccination.repository.VaccinationCenterRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class VaccinationCenterService {
     @Autowired
@@ -15,4 +17,9 @@ public class VaccinationCenterService {
           return vaccinationCenter;
       }
 
+
+    public List<VaccinationCenter> getMinimumDoctorCountVC(){
+        List<VaccinationCenter> vaccinationCenters = vaccinationCenterRepository.getMinimumDoctorVaccinationCenter();
+        return vaccinationCenters;
+    }
 }
