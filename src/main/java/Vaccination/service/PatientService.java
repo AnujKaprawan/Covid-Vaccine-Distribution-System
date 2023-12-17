@@ -1,7 +1,10 @@
 package Vaccination.service;
 
 
+import Vaccination.dto.request.PatientLoginDTO;
 import Vaccination.dto.request.PatientSignupDTO;
+import Vaccination.exceptions.PatientDoesNotExistException;
+import Vaccination.exceptions.WrongCredentials;
 import Vaccination.models.Patient;
 import Vaccination.repository.PatientRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,4 +29,15 @@ public class PatientService {
         return patient;
     }
 
+
+    public Patient login(PatientLoginDTO patientLoginDTO){
+        Patient patient = patientRepository.getPatientByEmail(patientLoginDTO.getEmail());
+        if(patient == null){
+            throw new PatientDoesNotExistException("Patient email Id is not registered in our portal.");
+        }
+        if(!patient.getPassword().equals(patientLoginDTO.getPassword())){
+            throw new WrongCredentials("Patient Entered Wrong Password.");
+        }
+        return patient;
+    }
 }

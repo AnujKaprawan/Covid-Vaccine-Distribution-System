@@ -11,4 +11,5 @@ import java.util.UUID;
 public interface PatientRepository extends JpaRepository<Patient, UUID> {
     @Query(value = "select * from patient where email=:patientEmail", nativeQuery = true)
     public Patient getPatientByEmail(String patientEmail);
+
 }
