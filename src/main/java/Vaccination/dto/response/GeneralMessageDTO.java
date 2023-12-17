@@ -8,6 +8,7 @@ import lombok.*;
 @Getter
 @Setter
 @ToString
+
 public class GeneralMessageDTO{
     String mssg;
 }
