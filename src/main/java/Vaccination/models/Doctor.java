@@ -1,10 +1,12 @@
 package Vaccination.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 
 import java.util.List;
 import java.util.UUID;
+
 
 @Entity
 @NoArgsConstructor
@@ -19,9 +21,9 @@ public class Doctor {
     String name;
     String docDegree;
     @ManyToOne
+    @JsonIgnore
     VaccinationCenter vaccinationCenter;
     int patientCount;
     @ManyToMany
     List<Patient> patients;
-
 }

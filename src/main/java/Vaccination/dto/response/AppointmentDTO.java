@@ -5,6 +5,8 @@ import Vaccination.models.Patient;
 import Vaccination.models.VaccinationCenter;
 import lombok.*;
 
+import java.util.UUID;
+
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
@@ -13,6 +15,8 @@ import lombok.*;
 public class AppointmentDTO {
     int doseNumber;
     Patient patient;
-    Doctor doctor;
-    VaccinationCenter vaccinationCenter;
+    UUID docID;
+    String docName;
+    UUID vcID;
+    String vaccinationCenterName;
 }
